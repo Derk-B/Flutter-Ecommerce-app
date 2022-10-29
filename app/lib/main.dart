@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'shared/primaryColor.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DBShoes',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: colorCustom),
       ),
       home: const MyHomePage(title: 'DB'),
     );
@@ -34,15 +35,30 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(children: [
-          TextButton("hallo"),
-          Text(widget.title),
-        ]),
+        elevation: 0,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+                splashRadius: 25.0,
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.menu,
+                )),
+            Text(widget.title),
+            IconButton(
+              splashRadius: 25.0,
+              onPressed: () {},
+              icon: const Icon(Icons.search),
+            )
+          ],
+        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: const <Widget>[
+            Text("Hallo"),
           ],
         ),
       ),
