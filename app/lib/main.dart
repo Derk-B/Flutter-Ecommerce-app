@@ -1,3 +1,7 @@
+import 'package:app/views/home/appBar.dart';
+import 'package:app/views/home/categorySelect/categoryList.dart';
+import 'package:app/views/home/productSelect/productList.dart';
+import 'package:app/views/home/saleCard.dart';
 import 'package:flutter/material.dart';
 import 'shared/primaryColor.dart';
 
@@ -34,31 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-                splashRadius: 25.0,
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.menu,
-                )),
-            Text(widget.title),
-            IconButton(
-              splashRadius: 25.0,
-              onPressed: () {},
-              icon: const Icon(Icons.search),
-            )
-          ],
-        ),
-      ),
+      appBar: const StandardAppBar(title: "DB"),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text("Hallo"),
+          children: <Widget>[
+            const SaleCard(),
+            CategoryList(),
+            ProductList(),
           ],
         ),
       ),
