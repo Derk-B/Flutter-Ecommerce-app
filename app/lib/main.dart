@@ -1,3 +1,4 @@
+import 'package:app/services/initDatabase.dart';
 import 'package:app/views/home/appBar.dart';
 import 'package:app/views/home/categorySelect/categoryList.dart';
 import 'package:app/views/home/productSelect/productList.dart';
@@ -20,8 +21,25 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(primarySwatch: colorCustom),
       ),
-      home: const MyHomePage(title: 'DB'),
+      home: FutureBuilder(
+          future: createDatabase(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return const MyHomePage(title: 'DB');
+            } else {
+              return const LoadingScreen();
+            }
+          }),
     );
+  }
+}
+
+class LoadingScreen extends StatelessWidget {
+  const LoadingScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold();
   }
 }
 
