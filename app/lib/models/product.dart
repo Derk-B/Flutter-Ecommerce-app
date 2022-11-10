@@ -5,14 +5,14 @@ class Product {
   String? _description;
   String? _color;
   double? _price;
-  String? _imageUrl;
+  String? _imageURL;
 
   Product.fromJson(Map data) {
     this._color = data["color"];
     this._brand = data["brand"];
     this._description = data["description"];
     this._price = data["price"];
-    this._imageUrl = data["imageUrl"];
+    this._imageURL = data["imageURL"];
   }
 
   get color => this._color;
@@ -31,7 +31,7 @@ class Product {
 
   set price(value) => this._price = value;
 
-  get imageUrl => this._imageUrl;
+  get imageUrl => this._imageURL;
 
-  set imageUrl(value) => this._imageUrl = value;
+  set imageUrl(value) => this._imageURL = value;
 }

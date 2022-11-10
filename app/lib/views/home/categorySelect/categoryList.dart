@@ -1,6 +1,6 @@
-import 'package:app/views/home/categorySelect/categoryCard.dart';
+import '/views/home/categorySelect/categoryCard.dart';
 import 'package:flutter/material.dart';
-import 'package:app/models/category.dart';
+import '/models/category.dart';
 
 class CategoryList extends StatelessWidget {
   CategoryList({Key? key}) : super(key: key);

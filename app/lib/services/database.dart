@@ -1,5 +1,5 @@
 import 'package:sqflite/sqflite.dart';
-import 'package:app/models/product.dart';
+import '/models/product.dart';
 import 'package:path/path.dart';
 
 Future<List<Product>> getProducts() async {

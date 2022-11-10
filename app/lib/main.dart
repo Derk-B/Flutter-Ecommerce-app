@@ -1,8 +1,13 @@
-import 'package:app/services/initDatabase.dart';
-import 'package:app/views/home/appBar.dart';
-import 'package:app/views/home/categorySelect/categoryList.dart';
-import 'package:app/views/home/productSelect/productList.dart';
-import 'package:app/views/home/saleCard.dart';
+import 'package:shoe_app/shared/screenEnum.dart';
+import 'package:shoe_app/views/home/home.dart';
+import 'package:shoe_app/views/info/info.dart';
+import 'package:shoe_app/views/navigationDrawer.dart';
+
+import 'services/initDatabase.dart';
+import 'views/home/appBar.dart';
+import 'views/home/categorySelect/categoryList.dart';
+import 'views/home/productSelect/productList.dart';
+import 'views/home/saleCard.dart';
 import 'package:flutter/material.dart';
 import 'shared/primaryColor.dart';
 
@@ -53,20 +58,64 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Screen _selectedScreen = Screen.shop;
+  void _onNavigationSelect(Screen screen) {
+    setState(() {
+      _selectedScreen = screen;
+    });
+  }
+
+  Widget getScreen() {
+    switch (_selectedScreen) {
+      case Screen.shop:
+        return const Home();
+      case Screen.shoppingcart:
+        return Container();
+      case Screen.favorite:
+        return Container();
+      case Screen.info:
+        return const Info();
+      default:
+        return const Home();
+    }
+  }
+
+  Widget getTitle() {
+    switch (_selectedScreen) {
+      case Screen.shop:
+        return Row(
+          children: [
+            const Expanded(
+              child: Text("Products"),
+            ),
+            IconButton(
+              splashRadius: 25.0,
+              onPressed: () {},
+              icon: const Icon(Icons.search),
+            )
+          ],
+        );
+      case Screen.shoppingcart:
+        return const Text("Shoppingcart");
+      case Screen.favorite:
+        return const Text("Favorites");
+      case Screen.info:
+        return const Text("Info");
+      default:
+        return const Text("Shoeapp");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const StandardAppBar(title: "DB"),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const SaleCard(),
-            CategoryList(),
-            ProductList(),
-          ],
+      appBar: StandardAppBar(title: getTitle()),
+      drawer: Drawer(
+        child: NavigationDrawer(
+          onNavigationSelect: _onNavigationSelect,
         ),
       ),
+      body: getScreen(),
     );
   }
 }

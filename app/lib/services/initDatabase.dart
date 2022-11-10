@@ -17,17 +17,17 @@ Future<void> createDatabase() async {
 
   await database.transaction((txn) async {
     await txn.rawInsert(
-        "INSERT INTO products VALUES(0, 'Mike', 'Mooie witte schoen', 'white', 69.99, 'mike_white_0.png')");
+        "INSERT INTO products VALUES(0, 'Zuma', 'Mooie grijze schoen', 'grey', 69.99, 'zuma_grey_0.png')");
     await txn.rawInsert(
-        "INSERT INTO products VALUES(1, 'Zuma', 'Mooie rode schoen', 'red', 49.99, 'mike_red_1.png')");
+        "INSERT INTO products VALUES(1, 'Mike', 'Mooie rode schoen', 'red', 49.99, 'mike_red_1.png')");
     await txn.rawInsert(
-        "INSERT INTO products VALUES(2, 'Mike', 'Mooie witte schoen', 'white', 65.99, 'bdidas_white_2.png')");
+        "INSERT INTO products VALUES(2, 'Mike', 'Mooie zwarte schoen', 'black', 65.99, 'mike_black_2.png')");
     await txn.rawInsert(
         "INSERT INTO products VALUES(3, 'Bdidas', 'Mooie blauwe schoen', 'blue', 59.99, 'bdidas_blue_3.png')");
     await txn.rawInsert(
-        "INSERT INTO products VALUES(4, 'Bdidas', 'Mooie zwarte schoen', 'black', 59.99, 'zuma_black_4.png')");
+        "INSERT INTO products VALUES(4, 'Bdidas', 'Mooie zwarte schoen', 'black', 59.99, 'bdidas_black_4.png')");
     await txn.rawInsert(
-        "INSERT INTO products VALUES(5, 'Zuma', 'Mooie bruine schoen', 'brown', 69.99, 'zuma_brown_5.png')");
+        "INSERT INTO products VALUES(5, 'Zuma', 'Mooie groene schoen', 'green', 69.99, 'zuma_green_5.png')");
 
     database.close();
   });

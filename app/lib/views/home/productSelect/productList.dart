@@ -1,20 +1,10 @@
-import 'package:app/models/product.dart';
-import 'package:app/services/database.dart';
-import 'package:app/views/home/productSelect/productCard/productCard.dart';
+import '/models/product.dart';
+import '/services/database.dart';
+import '/views/home/productSelect/productCard/productCard.dart';
 import 'package:flutter/material.dart';
 
 class ProductList extends StatelessWidget {
-  ProductList({Key? key}) : super(key: key);
-  final List<String> products = [
-    "product1",
-    "product2",
-    "product3",
-    "product4",
-    "product1",
-    "product2",
-    "product3",
-    "product4"
-  ];
+  const ProductList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

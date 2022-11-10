@@ -1,5 +1,5 @@
-name: app
-description: A new Flutter project.
+name: shoe_app
+description: An open source ecommerce app.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -67,6 +67,13 @@ flutter:
   #   - images/a_dot_ham.jpe
   assets:
     - assets/images/leaf.png
+    # Product images
+    - assets/images/zuma_grey_0.png
+    - assets/images/mike_red_1.png
+    - assets/images/mike_black_2.png
+    - assets/images/bdidas_blue_3.png
+    - assets/images/bdidas_black_4.png
+    - assets/images/zuma_green_5.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

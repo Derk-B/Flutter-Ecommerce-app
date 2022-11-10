@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProductImage extends StatelessWidget {
-  const ProductImage({Key? key}) : super(key: key);
+  final String ref;
+  const ProductImage({Key? key, required this.ref}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,10 @@ class ProductImage extends StatelessWidget {
             topRight: Radius.circular(8.0),
           ),
           color: Colors.white,
+        ),
+        child: Image.asset(
+          'assets/images/$ref',
+          width: MediaQuery.of(context).size.width,
         ),
       ),
     );

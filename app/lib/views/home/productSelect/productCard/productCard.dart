@@ -1,8 +1,8 @@
-import 'package:app/models/product.dart';
-import 'package:app/shared/favoriteButton.dart';
-import 'package:app/views/home/productSelect/productCard/productCardInfo.dart';
-import 'package:app/views/home/productSelect/productCard/productDiscount.dart';
-import 'package:app/views/home/productSelect/productCard/productImage.dart';
+import '/models/product.dart';
+import '/shared/favoriteButton.dart';
+import '/views/home/productSelect/productCard/productCardInfo.dart';
+import '/views/home/productSelect/productCard/productDiscount.dart';
+import '/views/home/productSelect/productCard/productImage.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
@@ -19,7 +19,7 @@ class ProductCard extends StatelessWidget {
         child: Stack(children: [
           Column(
             children: [
-              const ProductImage(),
+              ProductImage(ref: product.imageUrl),
               ProductCardInfo(brand: product.brand, price: product.price),
             ],
           ),
